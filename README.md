@@ -18,7 +18,7 @@ Some snippets to get you started.
 
 ```yaml
 services:
-  openaudible:
+  nomachine-docker:
     image: ghcr.io/lanjelin/nomachine-docker:latest
     container_name: nomachine
     environment:
