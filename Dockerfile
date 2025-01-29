@@ -3,7 +3,7 @@ FROM ghcr.io/linuxserver/baseimage-kasmvnc:ubuntujammy
 LABEL maintainer="lanjelin"
 
 ENV TITLE=Nomachine-Kasm
-ENV NOM_VERSION=8.15.3
+ENV NOM_VERSION=8.16.1
 
 RUN \
   echo "**** install packages ****" && \
