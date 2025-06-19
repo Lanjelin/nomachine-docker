@@ -23,7 +23,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.API_TOKEN }}
         run: |
-          EXT_RELEASE=$(wget https://downloads.nomachine.com/download/\?id\=4 -q -O - | grep "type=\"hidden\" class=\"details\"" | sed -nE 's/^[^0-9]*(([0-9]+\.)*[0-9]+).*/\1/p')
+          wget -q --save-cookies cookies.txt --keep-session-cookies -U "Mozilla/5.0 (X11; Linux x86_64)" --max-redirect=10 "https://downloads.nomachine.com/download/?id=4" -O /dev/null
+          EXT_RELEASE=$(wget -q --load-cookies cookies.txt -U "Mozilla/5.0 (X11; Linux x86_64)" "https://downloads.nomachine.com/download/?id=4" -O - | grep "type=\"hidden\" class=\"details\"" | sed -nE 's/^[^0-9]*(([0-9]+\.)*[0-9]+).*/\1/p')
           if [ -z "${EXT_RELEASE}" ]; then
             echo "**** Can't retrieve external release of NoMachine, exiting ****"
             exit 1
