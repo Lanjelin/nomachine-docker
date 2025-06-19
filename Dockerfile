@@ -12,7 +12,7 @@ RUN \
     wget && \
   echo "**** install nomachine ****" && \
   mkdir -p /app && \
-  wget -q https://download.nomachine.com/download/${NOM_VERSION%.*}/Linux/nomachine_${NOM_VERSION}_1_x86_64.tar.gz -O /app/nomachine.tar.gz && \
+  wget -q https://download.nomachine.com/download/${NOM_VERSION%.*}/Linux/nomachine_${NOM_VERSION}_11_x86_64.tar.gz -O /app/nomachine.tar.gz && \
   cd /app && \
   tar -xf nomachine.tar.gz && \
   /app/NX/nxserver --install && \
